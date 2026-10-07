@@ -1,89 +1,73 @@
-/* ===== Step 2: Type Selectors ===== */
-
 h1 {
-  color: darkslateblue;
-  font-size: 40px;
+  color: midnightblue;
+  font-size: 38px;
 }
 
 h2 {
-  color: teal;
-  font-size: 28px;
+  color: seagreen;
+  font-size: 26px;
 }
 
 nav a {
-  text-transform: uppercase;
   font-weight: bold;
+  text-transform: uppercase;
 }
 
 footer {
-  background-color: #333333;
-  color: white;
+  color: whitesmoke;
+  background-color: dimgray;
 }
 
-/* ===== Step 3: Class Selectors ===== */
-
 .artist-card {
-  border: 2px solid darkslateblue;
-  border-radius: 10px;
-  background-color: lavender;
+  background-color: honeydew;
+  border: 3px dashed seagreen;
+  border-radius: 15px;
 }
 
 .thumbnail {
-  border: 3px solid #333333;
-  border-radius: 8px;
+  border: 4px solid goldenrod;
+  border-radius: 5px;
 }
 
-/* ===== Step 4: Id Selectors ===== */
-
 #vangogh h2 {
-  color: goldenrod;
+  color: darkorange;
 }
 
 #monet h2 {
-  color: cornflowerblue;
+  color: royalblue;
 }
 
 #rembrandt h2 {
-  color: saddlebrown;
+  color: maroon;
 }
 
 #welcome-text {
-  font-size: 22px;
+  font-size: 20px;
 }
 
-/* ===== Step 5: Parent + Child Selectors ===== */
-
 header nav a {
-  color: darkslateblue;
+  color: steelblue;
 }
 
 main article h2 {
-  font-size: 32px;
+  font-size: 30px;
+}
+
+main article p {
+  color: darkslategray;
 }
 
 footer a {
-  color: white;
+  color: whitesmoke;
 }
 
-/* ===== Step 6: Specificity Check ===== */
-
-/*
-  The "Visit Us" <h2> in visit.html has class="section-title".
-  Two rules try to color it:
-    h2             { color: teal; }     (type selector, Step 2)
-    .section-title { color: crimson; }  (class selector, below)
-  Crimson wins: a class selector is more specific than a type selector,
-  so it wins no matter which rule comes first in the file.
-*/
-
+/* "Visit Us" is darkviolet: .section-title (class) beats h2 (type) */
 .section-title {
-  color: crimson;
+  color: darkviolet;
 }
 
 /*
-  Specificity scores (id, class, type):
-    h2              -> (0, 0, 1)  one type
-    .artist-card    -> (0, 1, 0)  one class
-    #vangogh h2     -> (1, 0, 1)  one id + one type
-    header nav a    -> (0, 0, 3)  three types
+  nav a          = 0,0,2
+  .thumbnail     = 0,1,0
+  #monet h2      = 1,0,1
 */
